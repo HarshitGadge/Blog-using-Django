@@ -1,0 +1,12 @@
+{% extends "blog/base.html" %}
+{% block content %}
+<article class="card"><div class="card-body">
+  <small class="text-muted"><a href="{% url 'user-posts' object.author.username %}">{{ object.author }}</a> · {{ object.date_posted|date:"F d, Y" }}</small>
+  {% if object.author == user %}
+    <div class="my-2"><a class="btn btn-secondary btn-sm" href="{% url 'post-update' object.id %}">Update</a>
+    <a class="btn btn-danger btn-sm" href="{% url 'post-delete' object.id %}">Delete</a></div>
+  {% endif %}
+  <h2>{{ object.title }}</h2>
+  <p>{{ object.content|linebreaksbr }}</p>
+</div></article>
+{% endblock %}

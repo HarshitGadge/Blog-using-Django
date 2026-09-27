@@ -1,0 +1,5 @@
+{% extends "blog/base.html" %}{% load crispy_forms_tags %}
+{% block content %}
+<form method="post">{% csrf_token %}<legend>Blog Post</legend>{{ form|crispy }}
+  <button class="btn btn-outline-info" type="submit">Post</button></form>
+{% endblock %}

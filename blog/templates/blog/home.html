@@ -1,0 +1,5 @@
+{% extends "blog/base.html" %}
+{% block content %}
+  {% for post in posts %}{% include "blog/_post_card.html" %}{% empty %}<p>No posts yet.</p>{% endfor %}
+  {% include "blog/_pagination.html" %}
+{% endblock %}

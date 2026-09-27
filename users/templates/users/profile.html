@@ -1,0 +1,7 @@
+{% extends "blog/base.html" %}{% load crispy_forms_tags %}
+{% block content %}
+<div class="media mb-3"><img class="rounded-circle mr-3" width="100" src="{{ user.profile.image.url }}" alt="">
+  <div class="media-body"><h2>{{ user.username }}</h2><p class="text-secondary">{{ user.email }}</p></div></div>
+<form method="post" enctype="multipart/form-data">{% csrf_token %}<legend>Profile info</legend>
+  {{ u_form|crispy }}{{ p_form|crispy }}<button class="btn btn-outline-info" type="submit">Update</button></form>
+{% endblock %}
