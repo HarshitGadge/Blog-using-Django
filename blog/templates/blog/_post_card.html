@@ -1,0 +1,5 @@
+<article class="card mb-3"><div class="card-body">
+  <small class="text-muted"><a href="{% url 'user-posts' post.author.username %}">{{ post.author }}</a> · {{ post.date_posted|date:"F d, Y" }}</small>
+  <h3 class="card-title"><a href="{% url 'post-detail' post.id %}">{{ post.title }}</a></h3>
+  <p class="card-text">{{ post.content|truncatewords:60 }}</p>
+</div></article>
